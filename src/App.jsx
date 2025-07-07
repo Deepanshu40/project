@@ -10,9 +10,9 @@ import Contact from "./components/Contact";
 
 const App = () => {
   return (
-    <div className="h-svh">
+    <div className="">
       <Navbar />
-      <div className="mt-32 min-h-80">
+      <div className="mt-32 min-h-44">
         {/* <Contact /> */}
         <BrowserRouter>
           <Routes>
