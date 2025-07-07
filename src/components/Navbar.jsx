@@ -58,7 +58,7 @@ const Navbar = () => {
         <div className='px-[5%] flex justify-between items-center h-12 bg-blue-800 py-4'>
             <div className='hidden md:flex gap-8'>
                 {contact.map((item, index) => (
-                <div className='flex items-center gap-2 pr-8 border-r-1'>
+                <div key={index} className='flex items-center gap-2 pr-8 border-r-1'>
                     <span className='text-orange-400'>{item.icon}</span>
                     <span className='text-white'>{item.info}</span>
                 </div>

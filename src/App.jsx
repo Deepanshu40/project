@@ -10,10 +10,10 @@ import Contact from "./components/Contact";
 
 const App = () => {
   return (
-    <div>
+    <div className="h-svh">
       <Navbar />
-      <div className="mt-32">
-        <Contact />
+      <div className="mt-32 min-h-80">
+        {/* <Contact /> */}
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -23,6 +23,7 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       </div>
+      <Footer />
     </div>
   );
 };
