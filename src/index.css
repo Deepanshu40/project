@@ -1,20 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
 @import "tailwindcss";
 
-html, body {
-    font-size: 16px;
+@theme {
+    /* colors */
+    --color-*: initial; 
+    --color-orange: #ffa001;
+    --color-blue: #0B33B8;
+    --color-blue-dark: #00206E;
+    --color-green: #97CB26;
+    --color-peach: #FFDFAA;
+    --color-sky: #BFD1FC;
+    --color-lime: #D3EF96;
+    --color-gray: #D6D7D8;
+    --color-black: #000000;
+    --color-white: #EEEEEE;
+    --color-dark: #404040;
+    --color-medium: #979797;
+    --color-pink: #FFDCDC;
+
+    /* font-family */
+    --font-roboto: "Roboto", sans-serif;
+    --font-sansita: "Sansita", sans-serif; 
+    --font-Outfit: "Outfit", sans-serif;
+
+    /* font-sizes */
+    --font-heading-1: 54px;
+    --font-heading-2: 43px;
+    --font-heading-3: 31px;
+    --font-heading-4: 25px;
+    --font-heading-5: 20px;
+    --font-body: 18px;
+
+    /* shadow */
+    --shadow-style1: 0 4px 4px 0 rgba(0,0,0,0.25);
+
+    /* --animate-easeInOutFromLeft: easeInOutFromLeft 2s ease-in-out;
+    --animate-easeInOutFromTop:  easeInOutFromTop 2s ease-in-out;
+    --animate-easeInOutFromRight: easeInOutFromRight 2s ease-in-out;
+    --animate-easeInOutFromBottom: easeInOutFromBottom 2s ease-in-out; */
+
+}
+
+ html, body, #root {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: var(--font-Outfit);
+    height: 100%;
 }
 
-@media (max-width: 468px) {
-    html {
-        font-size: 12px;
-    }   
+@keyframes easeInOutFromLeft {
+0% {
+    translate: -10rem;
+    opacity: 0;
 }
+100% {
+    translate: 0;
+    opacity: 100;
+}}
 
-@media (max-width: 768px) {
-    html {
-        font-size: 14px;
-    }   
+@keyframes easeInOutFromTop {
+0% {
+    translate: 0 -10rem;
+    opacity: 0;
 }
+/* 50% {
+    translate: 0 0rem
+}
+75% {
+    translate: 0 -2rem;
+} */
+100% {
+    translate: 0;
+    opacity: 100;
+}}
+
+@keyframes easeInOutFromRight {
+0% {
+    translate: 10rem;
+    opacity: 0;
+}
+100% {
+    translate: 0;
+    opacity: 100;
+
+}}
+
+@keyframes easeInOutFromBottom {
+0% {
+    translate: 0 10rem
+}
+/* 50% {
+    translate: 0 0
+}
+75% {
+    translate: 0 6rem
+} */
+100% {
+    translate: 0;
+}}
+
+@keyframes linearInfiniteFromTop {
+0% {
+    translate: 0 -0.4rem;
+}
+50% {
+    translate: 0 0;
+}
+100% {
+    translate: 0 -0.4rem;
+}}
+@keyframes linearInfiniteFromBottom {
+0% {
+    translate: 0 0.4rem;
+}
+50% {
+    translate: 0 0;
+}
+100% {
+    translate: 0 0.4rem;
+}}
