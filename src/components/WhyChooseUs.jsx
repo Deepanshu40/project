@@ -1,4 +1,4 @@
-import {Batch, Clock, Shield1, Shield4, Tick} from "../assets/Svg"
+import {Batch, Clock, CurveArrow, Shield1, Shield4, Tick} from "../assets/Svg"
 
 const clientBenefits = [
     {
@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
   return (
     <div className="flex flex-col md:flex-row">
         <div className="relative flex flex-col bg-pink border-1 shadow-style1 p-[8%] w-full md:w-1/2 gap-8">
-        <div className="absolute hidden md:block top-0 -end-32"><img src="/curve_arrow.svg" alt="arrow_image" className="" /></div>
+        <div className="absolute hidden md:block top-0 -end-32"><CurveArrow /></div>
             <h1 className="text-4xl text-blue font-semibold tracking-wider w-8/12">Why Choose RTF Insurance?</h1>
             <div className="flex flex-col gap-8">
                 {clientBenefits.map((item, index) => <div key={index} className="flex items-start gap-6">
