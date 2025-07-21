@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className='flex flex-col'>
        <HeroSection />
-      <TrustedByClients />
+       <TrustedByClients />
       <InsuranceProducts />
       <WhyChooseUs />
       <Glimpse />

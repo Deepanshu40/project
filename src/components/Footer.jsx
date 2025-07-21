@@ -1,4 +1,5 @@
 import SocialIcons from "./SocialIcons";
+import { Link } from "react-router-dom";
 
 const linkGroup = [
   {
@@ -108,10 +109,10 @@ const linkGroup2 = [
 
 const Footer = () => {
   return (
-    <div className=" bg-sky px-[4%] pt-20 pb-8 flex flex-col gap-8 font-medium">
+    <div className=" bg-sky px-[1rem] sm:px-[3rem] lg:px-[6.5rem] pt-20 pb-8 flex flex-col gap-8 font-medium">
       <div className=" flex flex-col md:flex-row justify-between gap-14 md:gap-[2%] text-center md:text-left">
         <div className="hidden lg:flex flex-col items-center gap-8 ">
-          <img src="/footer/logo.png" alt="logo" className="max-w-[80%]" />
+          <Link to={"/"}><img src="/footer/logo.png" alt="logo" className="max-w-[80%]" /></Link>
           <SocialIcons iconSize="text-4xl" />
         </div>
         <div className="flex flex-col md:flex-row justify-evenly w-full gap-12">
@@ -120,13 +121,13 @@ const Footer = () => {
               <span className="text-sm font-semibold">{item1.title}</span>
               <div className="flex flex-col gap-1">
                 {item1.linkSet.map((item2, index2) => (
-                  <a
+                  <Link
                     key={index2}
-                    href={item2.link}
-                    className="text-sm font-medium cursor-pointer"
+                    to={"/"}
+                    className="text-sm font-medium cursor-pointer hover:scale-110 duration-200"
                   >
                     {item2.title}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -135,14 +136,14 @@ const Footer = () => {
         <div className="flex flex-col items-center text-nowrap gap-4">
           <span className="text-sm font-semibold">Apps for Employees</span>
           <div className="flex flex-col gap-8">
-            <a className="flex items-center justify-center  bg-white border-1 rounded-md gap-4 px-6 py-1">
+            <a className="flex items-center justify-center cursor-pointer hover:scale-110 hover:shadow-style1 duration-500  bg-white border-1 rounded-md gap-4 px-6 py-1">
               <img src="/footer/app_icon1.png" alt="playstore_icon" />
               <div className="flex flex-col">
                 <span className="text-xs text-black">GET IN ON</span>
                 <span className="text-lg font-medium">Google Play</span>
               </div>
             </a>
-            <a className="flex items-center justify-center  bg-white border-1 rounded-md gap-4 px-6 py-1">
+            <a className="flex items-center justify-center cursor-pointer hover:scale-110 hover:shadow-style1 duration-500  bg-white border-1 rounded-md gap-4 px-6 py-1">
               <img src="/footer/app_icon2.png" alt="playstore_icon" />
               <div className="flex flex-col">
                 <span className="text-xs text-black">Download on the</span>

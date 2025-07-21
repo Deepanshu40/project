@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import ButtonWithIcon from "./ButtonWithIcon";
+import {Call1, Message1, Location1} from "../assets/Svg"
 
 const navItems = [
   {
@@ -26,16 +27,16 @@ const navItems = [
 
 const contact = [
   {
-    icon: "/navbar/call.svg",
+    icon: <Call1 />,
     info: "+(111) 99_283_473",
   },
   {
-    icon: "/navbar/message.svg",
+    icon: <Message1 />,
     info: "rtfinsurance@gmail.cm",
   },
 
   {
-    icon: "navbar/location.svg",
+    icon: <Location1 />,
     info: "New work city us",
   },
 ];
@@ -66,7 +67,7 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 w-full flex flex-col z-10">
       {/* nav1 */}
-      <div className="px-[5%] flex justify-between items-center h-14 bg-blue-dark py-4">
+      <div className="px-[1rem] sm:px-[3rem] lg:px-[6.5rem] flex justify-between items-center h-14 bg-blue-dark py-4">
         <div className="hidden lg:flex gap-8">
           {contact.map((item, index) => (
             <div
@@ -74,7 +75,7 @@ const Navbar = () => {
               className="flex items-center gap-2 pr-8 border-r-1 border-r-sky"
             >
               <span className="text-orange">
-                <img src={item.icon} alt="icon" />
+                {item.icon}
               </span>
               <span className="text-white">{item.info}</span>
             </div>
@@ -121,17 +122,15 @@ const Navbar = () => {
         </div>
       </div>
       {/* nav2 */}
-      <div className="relative w-full bg-white top-0 px-[5%] flex justify-between items-center h-24">
-        <div>
-          <img src="/navbar/logo.png" alt="logo_image" className="" />
-        </div>
+      <div className="relative w-full bg-white top-0 px-[1rem] sm:px-[3rem]  lg:px-[6.5rem] flex justify-between items-center h-24">
+          <Link to={"/"}><img src="/navbar/logo.png" alt="logo_image"/></Link>
         <div className="hidden lg:flex text-lg font-semibold gap-16 xl:gap-24">
           {navItems.map((item, index) => (
             <Link
               key={index}
               to={item.link}
               className={`${
-                item.link === pathname && "text-orange cursor-default"
+                item.link === pathname ? "text-orange cursor-default" : "hover:scale-105"
               }`}
             >
               {item.title}
@@ -148,7 +147,7 @@ const Navbar = () => {
             <Link
               key={index}
               to={item.link}
-              className={`text-center border-b-1 border-b-gray py-2 hover:bg-gray bg-white ${
+              className={`text-center border-b-1 border-b-gray py-2 cursor-pointer hover:bg-gray bg-white duration-200 ${
                 item.link === pathname && "text-orange cursor-default"
               }`}
               onClick={() => setShow(!show)}
@@ -162,12 +161,12 @@ const Navbar = () => {
           <Link to="/login">
             <ButtonWithIcon
               btnText="Login"
-              classNames="px-6 py-2 rounded-lg border-1 border-blue text-lg"
+              classNames="px-6 py-2 rounded-lg border-1 text-lg text-blue border-blue hover:bg-blue hover:text-white hover:shadow-style1 duration-200 "
             />
           </Link>
           <ButtonWithIcon
             btnText="Get a Quote"
-            classNames="px-6 py-2 rounded-lg border-1 border-blue bg-blue text-white text-lg"
+            classNames="px-6 py-2 rounded-lg border-1 border-blue bg-blue text-white text-lg hover:shadow-style1 duration-200"
           />
         </div>
       </div>

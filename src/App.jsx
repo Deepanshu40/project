@@ -6,11 +6,15 @@ import Product from "./pages/Product";
 import Elements from "./pages/Elements";
 import Blog from "./pages/Blog";
 import Login from "./pages/Login";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
+
+
   return (
     <div className="h-full">
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <div className="min-h-[60%]">
           <div className="pt-32">
@@ -24,8 +28,9 @@ const App = () => {
 
           </div>
         </div>
-      </BrowserRouter>
+      
       <Footer />
+      </BrowserRouter>
     </div>
   );
 };

@@ -1,5 +1,7 @@
-import InsuranceProductCard from "./InsuranceProductCard";
 import { FaArrowRight } from "react-icons/fa6";
+import InsuranceProductCard from "./InsuranceProductCard";
+import { Arrow } from "../assets/Svg";
+
 
 const products = [
   {
@@ -8,7 +10,7 @@ const products = [
     cardTitle: "Health Insurance",
     cardText: "Lorem ipsum dolor sit amet, consecte adipisicing elitsed do.",
     btnText: "Learn More",
-    btnIcon: <FaArrowRight />,
+    btnIcon: <span className="rotate-270 size-2"><Arrow /></span>,
   },
   {
     imageAddress: "bg-[url('/products/image2.png')]",
@@ -16,7 +18,7 @@ const products = [
     cardTitle: "Motor Insurance",
     cardText: "Lorem ipsum dolor sit amet, consecte adipisicing elitsed do.",
     btnText: "Learn More",
-    btnIcon: <FaArrowRight />,
+    btnIcon: <span className="rotate-270 size-2"><Arrow /></span>,
   },
   {
     imageAddress: "bg-[url('/products/image3.png')]",
@@ -24,7 +26,7 @@ const products = [
     cardTitle: "Life Insurance",
     cardText: "Lorem ipsum dolor sit amet, consecte adipisicing elitsed do.",
     btnText: "Learn More",
-    btnIcon: <FaArrowRight />,
+    btnIcon: <span className="rotate-270 size-2"><Arrow /></span>,
   },
 ];
 
@@ -50,16 +52,16 @@ const InsuranceProducts = () => {
           <img
             src="/products/top_right.png"
             alt="image"
-            className="absolute -top-10 right-[2%]"
+            className="absolute -top-10 right-[2rem]"
           />
           <img
             src="/products/bottom_left.png"
             alt="image"
-            className="absolute -bottom-10 left-[2%]"
+            className="absolute -bottom-10 left-[2rem]"
           />
         </div>
 
-        <div className="md:absolute grid grid-cols-1 md:grid-cols-3 gap-6 w-full md:h-full z-10 px-[6%]">
+        <div className="md:absolute grid grid-cols-1 md:grid-cols-3 gap-6 w-full md:h-full z-10 px-[1rem] sm:px-[5rem]">
         {products.map((item, index) => (
           <InsuranceProductCard
             key={index}
@@ -69,7 +71,7 @@ const InsuranceProducts = () => {
             cardText={item.cardText}
             btnIcon={item.btnIcon}
             btnText={item.btnText}
-            btnClassNames="max-w-fit border-1 border-orange bg-pink/28 text-black text-[0.75rem] font-normal hover:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"
+            btnClassNames="max-w-fit border-1 border-orange bg-pink/28 text-black text-[0.75rem] font-normal hover:shadow-style1 hover:bg-orange hover:text-white duration-200"
           />
         ))}        
         </div>
