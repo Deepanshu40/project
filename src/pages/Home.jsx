@@ -1,4 +1,5 @@
 import HeroSection from "../components/HeroSection"
+import HeroSection2 from "../components/HeroSectionBackgroundImage"
 import Contact from '../components/Contact'
 import TrustedByClients from '../components/TrustedByClients'
 import InsuranceProducts from "../components/InsuranceProducts"
@@ -8,7 +9,7 @@ import Glimpse from "../components/Glimpse"
 const Home = () => {
   return (
     <div className='flex flex-col'>
-       <HeroSection />
+        <HeroSection />
        <TrustedByClients />
       <InsuranceProducts />
       <WhyChooseUs />

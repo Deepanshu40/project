@@ -1,7 +1,11 @@
-import { FaArrowRight } from "react-icons/fa6";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import InsuranceProductCard from "./InsuranceProductCard";
 import { Arrow } from "../assets/Svg";
+import { useRef } from "react";
 
+gsap.registerPlugin(ScrollTrigger);
 
 const products = [
   {
@@ -31,9 +35,28 @@ const products = [
 ];
 
 const InsuranceProducts = () => {
+
+    const insuranceCardRef = useRef();
+    const {contextSafe} = useGSAP();
+
+contextSafe(useGSAP(() => {
+  gsap.from(insuranceCardRef.current.querySelectorAll(".insuranceCard"), {
+    y: 200,
+    opacity: 0,
+    ease: "power1.in",
+    scrollTrigger: {
+      trigger: insuranceCardRef.current,
+      scroller: "body",
+      scrub: 1,
+      start: "top 100%",
+      end: "top 40%",
+    },
+  });
+}, { dependencies: [] })
+)
   return (
-    <div className="flex flex-col items-center bg-sky py-16 gap-12 isolate">
-      <div className="flex flex-col items-center gap-4 sm:w-3/4 text-center px-[6%]">
+    <div className="flex flex-col items-center bg-sky pt-16 md:py-16 gap-12 isolate">
+      <div className="flex flex-col items-center gap-4 sm:w-3/4 text-center px-[1rem] sm:px-[3rem] lg:px-[6.5rem]">
         <div className="flex items-center gap-2 border-1 border-blue/20 rounded-4xl px-4 py-2 w-fit flex-nowrap">
           <span className="text-2xl">
             <img src="/products/shield.svg" alt="icon" />
@@ -47,7 +70,7 @@ const InsuranceProducts = () => {
         </span>
       </div>
 
-      <div className="relative h-fit sm:h-[400px] md:h-[500px] xl:h-[700px] w-full">
+      <div className="relative h-fit sm:h-[400px] md:h-[500px] xl:h-[600px] w-full">
         <div className="hidden md:block absolute w-full h-full">
           <img
             src="/products/top_right.png"
@@ -61,7 +84,7 @@ const InsuranceProducts = () => {
           />
         </div>
 
-        <div className="md:absolute grid grid-cols-1 md:grid-cols-3 gap-6 w-full md:h-full z-10 px-[1rem] sm:px-[5rem]">
+        <div ref={insuranceCardRef} className="md:absolute grid grid-cols-1 md:grid-cols-3 gap-6 w-full h-full z-10 px-[1rem] sm:px-[5rem]">
         {products.map((item, index) => (
           <InsuranceProductCard
             key={index}
@@ -77,7 +100,7 @@ const InsuranceProducts = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[1,2,3].map((item, index) => (
-          <div key={index} className="sm:h-[400px] md:h-[500px] xl:h-[700px]">
+          <div key={index} className="md:h-[500px] xl:h-[600px]">
           </div>
           ))}        
         </div>

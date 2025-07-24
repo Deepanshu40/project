@@ -1,12 +1,12 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { useRef } from 'react';
 
 
 import {Heart, Shield1, Shield2, Arrow} from "../assets/Svg"
 import ButtonWithIcon from "./ButtonWithIcon";
 import HeroSectionImageCard from "./HeroSectionImageCard";
-import { useRef } from 'react';
-
+import HeroSectionBackgroundImage from './HeroSectionBackgroundImage';
 
 const heroImageSection = [
   {
@@ -41,6 +41,7 @@ const HeroSection = () => {
   const btnRightRef = useRef();
   const heroImageCardRef = useRef();
   const {contextSafe} = useGSAP();
+  const heroRef = useRef();
 
    contextSafe(useGSAP(() => {
     gsap.to(heroImageCardRef.current.querySelectorAll(".tabletAnimation"), {
@@ -65,23 +66,25 @@ const HeroSection = () => {
     })
 
     tl.from(btnLeftRef.current, {
-      x: -50,
+      x: -200,
       opacity: 0,
       duration: 1,
     }, "<")
-
 
       tl.from(btnRightRef.current, {
       x: 50,
       opacity: 0,
       duration: 1,
     }, "<")
-}))
+})
+)
 
+console.log(heroRef.current)
   return (
-    <div className="flex items-center gap-8 px-[1rem] sm:px-[2rem] lg:px-[3rem] py-36 bg-blue font-bold">
-      <div className="flex flex-col gap-16 lg:w-full">
-        <h1 ref={headingRef} className="flex flex-col gap-6 w-[80%] text-6xl font-extrabold text-nowrap">
+    <div className={`relative overflow-x-hidden flex items-center gap-8 px-[1rem] sm:px-[2rem] lg:px-[3rem] py-16 sm:py-36 bg-blue font-bold`}>
+      <HeroSectionBackgroundImage bannerWidth={heroRef.current?.innerWidth || 1580} bannerHeight={55} rows={5} cols={5} imageUrl='/Background.png' />
+      <div ref={heroRef} className={`flex flex-col gap-8 sm:gap-16 lg:w-full`}>
+        <h1 ref={headingRef} className="flex flex-col gap-6 sm:gap-6 w-[80%] text-5xl sm:text-6xl font-extrabold text-nowrap">
           <span className="text-white">
             Your Trusted
           </span>
@@ -93,7 +96,7 @@ const HeroSection = () => {
             Partner
           </span>
         </h1>
-        <span ref={paraRef} className="text-white text-2xl text-normal max-w-[50rem]">
+        <span ref={paraRef} className="text-white text-xl sm:text-2xl text-normal max-w-[50rem]">
           Making insurance accessible, valuable. Your protection is our
           <span className="text-orange"> lifetime commitment.</span>.
         </span>

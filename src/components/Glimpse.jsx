@@ -11,36 +11,44 @@ const appFeatures = {
     {
       icon: "/glimpse/image1.png",
       title: "Hr Dashboard",
+      image: "https://media.istockphoto.com/id/2193247029/photo/business-team-analyzing-interactive-digital-dashboards-with-data-visualizations.jpg?s=1024x1024&w=is&k=20&c=P78tpz5vzcieYNBwVaiiBjG4s_8TwZ6W6ItGGRnnUdE="
     },
     {
       icon: "/glimpse/image2.png",
       title: "Claim List",
+      image: "https://media.istockphoto.com/id/1425061326/photo/business-concept-chart-graph-and-diagram-with-rocket-on-blue-background-to-the-moon-concept.jpg?s=2048x2048&w=is&k=20&c=P_c22zgIwbuiNCZQa2g8TWcgUtCu7YYMEdMOFCWUW8Q="
     },
     {
       icon: "/glimpse/image3.png",
       title: "Policy List",
+      image: "https://media.istockphoto.com/id/2200808235/photo/female-business-analyst-using-big-data-dashboard.jpg?s=2048x2048&w=is&k=20&c=XJKcMgTk1l4QAfEzgHmPNQhKLv18Y1-BVeyj-tuhqzY="
     },
     {
       icon: "/glimpse/image4.png",
       title: "Monthly Reporting",
+      image: "https://media.istockphoto.com/id/1157269551/photo/two-businesspeople-examining-graph-on-computer.jpg?s=2048x2048&w=is&k=20&c=6oAqjXbTPF_PTFQ9cJcrvEA787Dfig5u2qmUotIUQgM="
     },
   ],
   employeeApp: [
     {
       icon: "/glimpse/image1.png",
       title: "Hr Dashboard",
+      image: "https://media.istockphoto.com/id/1358548849/photo/businessman-and-businesswoman-wearing-formal-suit-are-working-to.jpg?s=2048x2048&w=is&k=20&c=F6APd-y2Gv-L9itb106AlHMdzZz3llPj4FNIxcKZPzo="
     },
     {
       icon: "/glimpse/image2.png",
       title: "Claim List",
+      image: "https://media.istockphoto.com/id/1358049223/photo/hedge-fund-trader-working-on-a-computer-with-multi-monitor-workstation-with-real-time-stocks.jpg?s=2048x2048&w=is&k=20&c=8vyNcU6X-FVtcEcp267I9lihhFWiqNXzqv3VTK2DKyo="
     },
     {
       icon: "/glimpse/image3.png",
       title: "Policy List",
+      image: "https://media.istockphoto.com/id/1487420430/photo/colleagues-discussing-the-growth-of-stocks.jpg?s=2048x2048&w=is&k=20&c=VaycnFiLISFNcSmx_ERGANmnytljXUzb7Ks-XImdOBs="
     },
     {
       icon: "/glimpse/image4.png",
       title: "Monthly Reporting",
+      image: "https://media.istockphoto.com/id/1749463542/photo/african-american-data-analyst.jpg?s=2048x2048&w=is&k=20&c=dMiyitjFwK_nR9lfNODUm39Of-hoOICaGSCn5nQltZs="
     },
   ],
 };
@@ -142,10 +150,11 @@ const Glimpse = () => {
           </div>
         </div>
       </div>
-      <div className="hidden lg:flex items-center w-1/2 bg-pink"></div>
+      <div className="hidden lg:flex items-center w-1/2 bg-pink "></div>
       <img
         ref={imageRef}
-        src="/glimpse/main_image1.png"
+        // src="/glimpse/main_image1.png"
+        src={appFeatures[activeTab][activeIndex].image}
         alt="main_image"
         className={`translate-y-[50%] lg:absolute py-[5%] px-[10%] bg-orange/60 rounded-2xl w-5/12 lg:w-7/12 h-[50%] lg:h-[75%] lg:top-[50%] lg:translate-y-[-50%] lg:right-12`}
       />

@@ -26,9 +26,9 @@ const contact = [
 const Contact = () => {
   return (
     <div className="flex text-center justify-center bg-blue-dark text-white py-12">
-      <div className="flex flex-col gap-12 items-center w-full">
+      <div className="flex flex-col gap-12 items-center w-full px-8">
         <h1 className="font-bold text-5xl">Ready to get Protected ?</h1>
-        <div className="flex flex-col text-center text-white/75 text-xl">
+        <div className="md:flex flex-col text-center text-white/75 text-xl">
           <span>Take the first step towards securing your future. Get a personalized </span>
           <span>insurance quote in just minutes and discover how affordable protection can be </span>
         </div>
